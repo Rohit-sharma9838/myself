@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background: #f4f4f4;
+  color: #222;
+}
+
+header {
+  background: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin-bottom: 10px;
+}
+
+nav a {
+  margin: 0 15px;
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+section {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+#hero {
+  background: #007acc;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.resume-button {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 20px;
+  background-color: #fff;
+  color: #007acc;
+  border: 2px solid #fff;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.resume-button:hover {
+  background-color: #005fa3;
+  color: white;
+  border-color: #005fa3;
+}
+
+#skills ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  list-style: none;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+#skills li {
+  background:pink;
+  padding: 10px 15px;
+  border-radius: 8px;
+}
+
+.project {
+  background: #fff;
+  padding: 15px;
+  margin: 10px 0;
+  border-left: 5px solid #007acc;
+}
+
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+.profile-photo {
+  width: 180px;             /* Width set karo */
+  height: 180px;            /* Height set karo (same as width for perfect circle) */
+  border-radius: 50%;       /* Circle banane ke liye */
+  object-fit: cover;        /* Photo ko crop karke fit karta hai */
+  display: block;
+  margin: 20px auto;        /* Center me lane ke liye */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Thoda shadow effect */
+  border: 3px solid #007acc; /* Thoda border (optional) */
+}
+
