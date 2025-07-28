@@ -1,4 +1,4 @@
-/* Base reset */
+/* Base Reset */
 * {
   margin: 0;
   padding: 0;
@@ -7,16 +7,8 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #f5f7fa;
-  color: #333;
-  line-height: 1.6;
-}
-
-/* Container */
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 0 20px;
+  background-color: #f9f9f9;
+  color: #222;
 }
 
 /* Header */
@@ -24,21 +16,22 @@ header {
   background-color: #004b8d;
   color: white;
   padding: 20px 0;
+  text-align: center;
+}
+
+header .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 header h1 {
-  text-align: center;
+  font-size: 2rem;
   margin-bottom: 10px;
 }
 
-header nav {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-
 header nav a {
+  margin: 0 12px;
   color: white;
   text-decoration: none;
   font-weight: 500;
@@ -52,14 +45,18 @@ header nav a:hover {
 #hero {
   text-align: center;
   padding: 60px 20px;
-  background: linear-gradient(to right, #007acc, #0097d3);
+  background: linear-gradient(to right, #007acc, #00b4d8);
   color: white;
 }
 
-#hero .btn {
+#hero .buttons {
+  margin-top: 20px;
+}
+
+.btn {
   display: inline-block;
-  margin: 10px 8px;
   padding: 12px 20px;
+  margin: 10px 8px;
   background-color: white;
   color: #007acc;
   font-weight: bold;
@@ -68,20 +65,20 @@ header nav a:hover {
   transition: background 0.3s ease;
 }
 
-#hero .btn:hover {
+.btn:hover {
   background-color: #f0f0f0;
 }
 
-#hero .btn.green {
+.btn.green {
   background-color: #28a745;
   color: white;
 }
 
-#hero .btn.green:hover {
+.btn.green:hover {
   background-color: #218838;
 }
 
-/* Sections */
+/* About Section */
 .section {
   padding: 50px 20px;
   text-align: center;
@@ -90,23 +87,14 @@ header nav a:hover {
 .section h2 {
   font-size: 28px;
   margin-bottom: 20px;
-  color: #004b8d;
+  color: #0077b6;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 3px;
+  text-decoration-color: #004b8d;
 }
 
-.section p {
-  /* About Me paragraph single line styling */
-  white-space: nowrap;       /* Text ko wrap nahi karne dega */
-  overflow: hidden;          /* Overflow ko chhupa dega */
-  text-overflow: ellipsis;   /* Agar text lamba hua to ... dikhega */
-  font-size: 18px;
-  font-weight: 500;
-  max-width: 800px;
-  margin: 10px auto;
-  color: #222;
-
-}
-
-/* Profile Image */
 .profile-photo {
   width: 140px;
   height: 140px;
@@ -114,8 +102,10 @@ header nav a:hover {
   object-fit: cover;
   margin: 15px auto;
   display: block;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
+/* Scrolling text (About) */
 .scroll-container {
   width: 100%;
   overflow: hidden;
@@ -125,12 +115,13 @@ header nav a:hover {
   height: 50px;
   display: flex;
   align-items: center;
+  margin-top: 20px;
 }
 
 .scroll-text {
   display: inline-block;
   white-space: nowrap;
-  padding-left: 100%; /* Starts off-screen */
+  padding-left: 100%;
   font-size: 24px;
   color: #004b8d;
   font-weight: 500;
@@ -139,32 +130,18 @@ header nav a:hover {
 
 @keyframes scroll-left {
   0% {
-    transform: translate3d(0,0,0);
+    transform: translateX(0);
   }
   100% {
-    transform: translate3d(-110%,0,0);
+    transform: translateX(-110%);
   }
 }
-
-
-
 
 /* Skills */
 #skills {
-  max-width: 600px;
+  max-width: 800px;
   margin: 50px auto;
   text-align: center;
-  font-family: 'Poppins', sans-serif;
-}
-
-#skills h2 {
-  font-size: 2.5rem;
-  color: #0077b6;
-  margin-bottom: 30px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  text-shadow: 1px 1px 3px rgba(0, 116, 217, 0.3);
 }
 
 .skills-list {
@@ -182,41 +159,31 @@ header nav a:hover {
   padding: 12px 22px;
   border-radius: 25px;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1rem;
   box-shadow: 0 4px 8px rgba(0, 116, 217, 0.3);
-  cursor: default;
-  transition: background 0.3s ease, transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .skills-list li:hover {
   background: linear-gradient(135deg, #0096c7, #023e8a);
   transform: scale(1.1);
 }
-.project {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #007acc;
-  margin-bottom: 10px;
-  font-family: 'Poppins', sans-serif;
-  text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.1);
-  letter-spacing: 0.5px;
-}
-.project{
-  font-size: 1.6rem;
-  font-weight: 700;
-  background: linear-gradient(90deg, #00bcd4, #4caf50);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 
+/* Projects */
+.project {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 25px;
+  max-width: 700px;
+  margin: 30px auto;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
 .project:hover {
   transform: scale(1.05);
   transition: 0.3s ease;
   cursor: pointer;
 }
-
-
-
 .project-video {
   border-radius: 10px;
   margin-top: 10px;
@@ -224,6 +191,70 @@ header nav a:hover {
   max-height: 300px;
   object-fit: cover;
 }
+
+.project-title {
+  font-size: 2rem;
+  background: linear-gradient(90deg, #00bcd4, #4caf50);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+
+.project-description {
+  font-size: 1.2rem;
+  color: #444;
+  margin: 20px auto;
+  font-weight: 500;
+  max-width: 700px;
+  line-height: 1.6;
+  text-align: center;
+  background: #f9f9f9;
+  padding: 15px 25px;
+  border-left: 4px solid #007acc;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.project-video,
+iframe {
+  width: 100%;
+  max-height: 300px;
+  border-radius: 10px;
+  margin: 15px 0;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.project-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn-github {
+  background-color: #24292e;
+  color: white;
+}
+
+.btn-github:hover {
+  background-color: #3c4146;
+  transform: scale(1.05);
+}
+
+.btn-live {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-live:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+/* Contact */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -257,14 +288,12 @@ header nav a:hover {
   background-color: #0096c7;
 }
 
-/* Sabse important part: */
 .contact-info {
-  margin: 0 auto;           /* Center horizontally */
-  max-width: 500px;         /* Same width as form */
-  font-size: 16px;
+  margin: 20px auto;
+  max-width: 500px;
+  font-size: 24px;
   color: #333;
-  text-align: left;         /* Left-align text */
-  margin-top: 20px;         /* Thoda gap upar se */
+  text-align: left;
 }
 
 .contact-info a {
@@ -276,8 +305,7 @@ header nav a:hover {
   text-decoration: underline;
 }
 
-
-/* ✅ WhatsApp Floating Button */
+/* WhatsApp Button */
 .whatsapp-button {
   position: fixed;
   bottom: 20px;
@@ -291,4 +319,13 @@ header nav a:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   z-index: 999;
   font-size: 15px;
+}
+
+/* Footer */
+footer {
+  background-color: #004b8d;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 40px;
 }
