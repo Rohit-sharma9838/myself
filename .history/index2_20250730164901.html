@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rohit Sharma | Portfolio</title>
+  <link rel="stylesheet" href="style3.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Header -->
+ <header>
+  <div class="nav-container">
+  <div class="logo">Rohit <span>Sharma</span></div>
+  <div class="navbar">
+    <a href="#home" class="nav-btn">Home</a>
+    <a href="#about" class="nav-btn">About</a>
+    <a href="#skills" class="nav-btn">Skills</a>
+    <a href="#projects" class="nav-btn">Projects</a>
+    <a href="#contact" class="nav-btn">Contact</a>
+  </div>
+</div>
+
+
+</header>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <h2>Hello, I'm <span class="highlight">Rohit Sharma</span></h2>
+<p class="subtitle">Full-Stack Developer · IT Graduate · Tech Enthusiast</p>
+
+    <div class="buttons">
+      <a href="resume.pdf" class="btn" target="_blank">📄 View Resume</a>
+      <a href="resume.pdf" class="btn green" download>⬇️ Download Resume</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <img src="rohit.jpg" alt="Rohit Sharma" class="profile-photo" />
+    <div class="scroll-container">
+      <div class="scroll-text">
+        I’m an IT graduate with a strong interest in web development and software engineering. I enjoy learning new technologies and building user-friendly applications. Currently, I’m improving my skills in full-stack development and working on real-world projects to grow as a developer.
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section">
+ <h2 class="skills-heading">SKILLS</h2>
+ 
+<div class="skills-rotating-box">
+
+  <div class="skills-typing-container">
+  <h3 class="skills-heading">WHAT @ I @ KNOW</h3>
+  <p class="my-para" class="typing-text" id="typing"></p>
+</div>
+
+<script src="script.js"></script>
+  <div class="orbit-container">
+    <div class="skill-circle">HTML5</div>
+    <div class="skill-circle">CSS3</div>
+    <div class="skill-circle">JavaScript</div>
+    <div class="skill-circle">SQL</div>
+    <div class="skill-circle">MySql</div>
+    <div class="skill-circle">MongoDB</div>
+    <div class="skill-circle">C & C++</div>
+    <div class="skill-circle">JAVA</div>
+    <div class="skill-circle">python</div>
+    <div class="skill-circle">GitHub</div>
+  </div>
+</div>
+
+ </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+
+    <div class="project-wrapper">
+    <!-- All .project divs go here -->
+  </div>
+
+    <div class="project">
+      <h3 class="project-title">GITHUB@PROJECT@DEMO</h3>
+      <p class="project-description">This is a demo video showing my GitHub project features.</p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1&mute=1"
+        title="GitHub Introduction Video" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <div class="project-buttons">
+        <a href="https://github.com/yourusername/yourproject" target="_blank" class="btn btn-github">GitHub</a>
+        <a href="https://yourlivedemo.com" target="_blank" class="btn btn-live">Live Demo</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <h3 class="project-title">PORTFOLIO@WEBSITE</h3>
+      <p class="project-description">A clean personal portfolio site built with HTML, CSS, and JavaScript.</p>
+      <video autoplay muted loop class="project-video">
+        <source src="portfolio.webm" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <div class="project">
+      <h3 class="project-title">TODO@APP</h3>
+      <p class="project-description">A simple task manager app with add/delete functionality.</p>
+      <video autoplay muted loop class="project-video">
+        <source src="tokyo.mp4.webm" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <div class="project">
+      <h3 class="project-title">X@SPAG@DETECTOR</h3>
+      <p class="project-description">A web-based tool that detects similarities between texts using string matching and semantic analysis.</p>
+      <video autoplay muted loop class="project-video">
+        <source src="x-spag.webm" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <h2>Feedback</h2>
+    <form action="https://formspree.io/f/mdkdkzpr" method="POST" class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Share your feedback..." required></textarea>
+      <input type="hidden" name="_subject" value="New Message from Portfolio Contact Form" />
+      <input type="hidden" name="_redirect" value="https://example.com/thankyou.html" />
+      <button>Send Feedback</button>
+    </form>
+
+    <div class="contact-info">
+      <p><strong>Email   :</strong> <a href="mailto:rohitsharma@example.com">rohitsharma@example.com</a></p>
+      <p><strong>Phone   :</strong> <a href="tel:+918828994367">+91 8828994367</a></p>
+      <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/rohit-sharma-b83701251" target="_blank">linkedin.com/in/rohit-sharma</a></p>
+      <p><strong>Resume  :</strong> <a href="resume.pdf" download>Download Resume</a></p>
+    </div>
+  </section>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/918828994367" class="whatsapp-button" target="_blank" title="Chat on WhatsApp">
+    💬 Chat on WhatsApp
+  </a>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Rohit Sharma. All rights reserved.</p>
+  </footer>
+    <script src="rohit.js"></script>
+</body>
+</html>

@@ -10,17 +10,20 @@
 <body>
 
   <!-- Header -->
-  <header>
-    <div class="container">
-      <h1>Rohit Sharma</h1>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
+ <header>
+  <div class="nav-container">
+  <div class="logo">Rohit <span>Sharma</span></div>
+  <div class="navbar">
+    <a href="#home" class="nav-btn">Home</a>
+    <a href="#about" class="nav-btn">About</a>
+    <a href="#skills" class="nav-btn">Skills</a>
+    <a href="#projects" class="nav-btn">Projects</a>
+    <a href="#contact" class="nav-btn">Contact</a>
+  </div>
+</div>
+
+
+</header>
 
   <!-- Hero Section -->
   <section id="hero">
@@ -29,7 +32,10 @@
 
     <div class="buttons">
       <a href="resume.pdf" class="btn" target="_blank">📄 View Resume</a>
-      <a href="resume.pdf" class="btn green" download>⬇️ Download Resume</a>
+      <a href="resume.pdf" download class="btn green">
+  <i class="bi bi-download"></i> Download Resume
+</a>
+
     </div>
   </section>
 
@@ -46,7 +52,7 @@
 
   <!-- Skills Section -->
   <section id="skills" class="section">
- <h2 class="skills-heading">Skills</h2>
+ <h2 class="skills-heading">SKILLS</h2>
  
 <div class="skills-rotating-box">
 
@@ -81,7 +87,7 @@
   </div>
 
     <div class="project">
-      <h3 class="project-title">GITHUB-PROJECT-DEMO</h3>
+      <h3 class="project-title">GITHUB@PROJECT@DEMO</h3>
       <p class="project-description">This is a demo video showing my GitHub project features.</p>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1&mute=1"
         title="GitHub Introduction Video" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -92,7 +98,7 @@
     </div>
 
     <div class="project">
-      <h3 class="project-title">PORTFOLIO WEBSITE</h3>
+      <h3 class="project-title">PORTFOLIO@WEBSITE</h3>
       <p class="project-description">A clean personal portfolio site built with HTML, CSS, and JavaScript.</p>
       <video autoplay muted loop class="project-video">
         <source src="portfolio.webm" type="video/mp4" />
@@ -101,7 +107,7 @@
     </div>
 
     <div class="project">
-      <h3 class="project-title">TODO APP</h3>
+      <h3 class="project-title">TODO@APP</h3>
       <p class="project-description">A simple task manager app with add/delete functionality.</p>
       <video autoplay muted loop class="project-video">
         <source src="tokyo.mp4.webm" type="video/mp4" />
@@ -110,10 +116,10 @@
     </div>
 
     <div class="project">
-      <h3 class="project-title">X-SPAG-DETECTOR</h3>
+      <h3 class="project-title">X@SPAG@DETECTOR</h3>
       <p class="project-description">A web-based tool that detects similarities between texts using string matching and semantic analysis.</p>
       <video autoplay muted loop class="project-video">
-        <source src="X-SPAG.mp4" type="video/mp4" />
+        <source src="x-spag.webm" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </div>
@@ -148,6 +154,6 @@
   <footer>
     <p>© 2025 Rohit Sharma. All rights reserved.</p>
   </footer>
-
+    <script src="rohit.js"></script>
 </body>
 </html>
