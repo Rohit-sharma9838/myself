@@ -140,6 +140,29 @@ a {
 }
 
 /* 📱 RESPONSIVE – Clean stacked layout on mobile */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 25px;
+    gap: 10px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+    margin-top: 10px;
+  }
+
+  .nav-btn {
+    width: 100%;
+    text-align: left;
+  }
+}
+
+
+
 
 /* Hero Section */
 #hero {
@@ -307,7 +330,7 @@ a {
 
 .scroll-text {
   min-width: 600px;
-  font-size: 1.10rem;
+  font-size: 1.20rem;
   color: black;
  font-family: 'Lora', serif;
   font-weight: 500;
@@ -428,7 +451,7 @@ a {
 
  .typing-text {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 28px;
+    font-size: 18px;
     font-weight: 600;
     color:black;
     width: 600px;
@@ -824,146 +847,5 @@ footer {
   .project iframe,
   .project video {
     height: 220px;
-  }
-}
-
-/* Responsive Layout Tweaks */
-@media (max-width: 1200px) {
-  .container {
-    width: 95%;
-  }
-
-  .scroll-text {
-    font-size: 1rem;
-  }
-
-  .typing-text {
-    font-size: 0.7rem;
-  }
-
-  .skill-circle {
-    width: 90px;
-    height: 90px;
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 992px) {
-  #hero h2 {
-    font-size: 2.4rem;
-  }
-
-  .subtitle {
-    font-size: 1.2rem;
-  }
-
-  .scroll-text {
-    font-size: 0.95rem;
-  }
-
-  .skills-heading {
-    font-size: 32px;
-  }
-
-  .project iframe,
-  .project video {
-    height: 260px;
-  }
-}
-
-@media (max-width: 768px) {
-  .nav-container {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 16px;
-  }
-
-  .logo {
-    font-size: 1.5rem;
-  }
-
-  .nav-btn {
-    font-size: 1rem;
-    width: 100%;
-    text-align: left;
-  }
-
-  .typing-text {
-    font-size: 0.6rem;
-  }
-
-  .section {
-    font-size: 28px;
-  }
-
-  .skill-circle {
-    width: 80px;
-    height: 80px;
-    font-size: 14px;
-  }
-
-  .scroll-text {
-    font-size: 0.9rem;
-    padding: 10px 15px;
-  }
-
-  .buttons .btn {
-    display: block;
-    margin: 10px auto;
-    font-size: 14px;
-    padding: 10px 16px;
-  }
-
-  .project iframe,
-  .project video {
-    height: 200px;
-  }
-
-  .contact-form,
-  .contact-info {
-    padding: 0 10px;
-  }
-}
-
-@media (max-width: 480px) {
-  #hero h2 {
-    font-size: 1.8rem;
-  }
-
-  .subtitle {
-    font-size: 1rem;
-  }
-
-  .typing-text {
-    font-size: 0.55rem;
-  }
-
-  .skill-circle {
-    width: 70px;
-    height: 70px;
-    font-size: 12px;
-  }
-
-  .scroll-text {
-    font-size: 0.85rem;
-  }
-
-  .section,
-  .skills-heading {
-    font-size: 24px;
-  }
-
-  .project-title {
-    font-size: 20px;
-  }
-
-  .project iframe,
-  .project video {
-    height: 180px;
-  }
-
-  footer {
-    font-size: 0.8rem;
   }
 }
