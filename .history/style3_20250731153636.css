@@ -104,8 +104,6 @@ a {
   cursor: pointer;
 }
 @media screen and (max-width: 768px) {
- /* For mobile view */
-@media screen and (max-width: 768px) {
   .nav-links {
     display: none;
     flex-direction: column;
@@ -115,7 +113,6 @@ a {
     left: 0;
     width: 100%;
     padding: 10px 0;
-    z-index: 9999; /* ensures it's on top */
   }
 
   .nav-links.show {
@@ -124,20 +121,7 @@ a {
 
   .menu-toggle {
     display: block;
-    cursor: pointer;
   }
-}
-
-
-  .nav-left {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .logo {
-    margin-bottom: 10px;
-  }
-}
 
 
 /* 📱 RESPONSIVE – Clean stacked layout on mobile */

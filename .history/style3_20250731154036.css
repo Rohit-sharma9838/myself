@@ -104,30 +104,25 @@ a {
   cursor: pointer;
 }
 @media screen and (max-width: 768px) {
- /* For mobile view */
-@media screen and (max-width: 768px) {
   .nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: #3e3b56;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    padding: 10px 0;
-    z-index: 9999; /* ensures it's on top */
-  }
+  display: none;
+  flex-direction: column;
+  background-color: #3e3b56;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
+}
 
-  .nav-links.show {
-    display: flex;
-  }
+.nav-links.show {
+  display: flex;
+}
+
 
   .menu-toggle {
     display: block;
-    cursor: pointer;
   }
-}
-
 
   .nav-left {
     flex-direction: column;
