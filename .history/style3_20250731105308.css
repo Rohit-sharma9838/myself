@@ -1,4 +1,5 @@
 /* Reset and Base Styles */
+/* ✅ Reset and Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -7,25 +8,23 @@
 html {
   scroll-behavior: smooth;
 }
-
 body {
+  overflow-x: hidden;
   margin: 0;
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(to bottom, #1c1c1c, #2b2b2b);
   color: black;
 }
-
 a {
   text-decoration: none;
   color: inherit;
 }
-
-/* Container */
 .container {
   width: 90%;
   max-width: 1100px;
   margin: 0 auto;
 }
+
 
 /* Header */
 /* Header container */
@@ -53,6 +52,28 @@ a {
 
 /* ✅ NAVBAR CONTAINER */
 /* 🌟 NAV CONTAINER – Glassmorphism + Gradient Border */
+@media (max-width: 768px) {
+  /* Mobile ke liye styles */
+  .nav-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .scroll-text {
+    min-width: 100%;
+    font-size: 1rem;
+  }
+
+  .project iframe {
+    height: 200px;
+  }
+}
+
 .nav-container {
   position: sticky;
   top: 0;
@@ -161,6 +182,30 @@ a {
   }
 }
 
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .typing-text {
+    font-size: 18px;
+    width: 90%;
+  }
+}
 
 
 
@@ -172,19 +217,43 @@ a {
   padding: 60px 20px;
 }
 
-#hero h2 {
-  font-size: 3rem;
-  font-weight: 700;
+@media (max-width: 768px) {
+  #hero h2 {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .typing-text {
+    font-size: 1.2rem;
+    padding: 0 10px;
+    text-align: center;
+  }
+
+  .scroll-text {
+    font-size: 1rem;
+    padding: 10px;
+  }
 }
 
-#hero .highlight {
-  color: #ffcc00;
+@media (max-width: 480px) {
+  #hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .typing-text {
+    font-size: 1rem;
+    padding: 0 8px;
+  }
+
+  .scroll-text {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
 }
 
-.subtitle {
-  font-size: 1.4rem;
-  color: #e0e0e0;
-}
 
 #hero {
   background: linear-gradient(-45deg, #007acc, #00bcd4, #4a90e2, #2dd3c0);
@@ -328,6 +397,28 @@ a {
   -webkit-overflow-scrolling: touch;
 }
 
+@media (max-width: 480px) {
+  .typing-text,
+  .scroll-text {
+    width: 90% !important;
+    min-width: auto !important;
+    font-size: 1rem !important;
+    padding: 10px 15px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-align: center;
+    margin: 20px auto;
+  }
+
+  #hero h2 {
+    font-size: 1.4rem;
+    padding: 0 10px;
+    text-align: center;
+    word-wrap: break-word;
+  }
+}
+
+.typing-text,
 .scroll-text {
   min-width: 600px;
   font-size: 1.20rem;
