@@ -52,27 +52,6 @@ a {
 /* ✅ NAVBAR CONTAINER */
 /* 🌟 NAV CONTAINER – Glassmorphism + Gradient Border */
 @media (max-width: 768px) {
-  /* Mobile ke liye styles */
-  .nav-container {
-    flex-direction: column;
-    padding: 20px;
-  }
-
-  .buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .scroll-text {
-    min-width: 100%;
-    font-size: 1rem;
-  }
-
-  .project iframe {
-    height: 200px;
-  }
-}
-
 .nav-container {
   position: sticky;
   top: 0;
@@ -704,7 +683,7 @@ a {
 .btn:hover {
   transform: translateY(-2px) scale(1.03);
 }
-
+}
 /* Contact Form */
 #contact {
   background: linear-gradient(-45deg, #ffe0e0, #e0fff4, #e0eaff, #fff0e0);
