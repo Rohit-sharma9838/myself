@@ -54,45 +54,105 @@ header {
 }
 
 
-.nav-btn {
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.hamburger {
+  display: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Make menu responsive on mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    background: #333;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav-links {
   position: relative;
   padding: 10px 14px;
   font-size: 20px;
   font-weight: 700;
-  color:white;
+  color: #fff;
   text-decoration: none;
   font-family: 'Poppins', sans-serif;
-  transition: color 0.3s ease, transform 0.3s ease;
+  transition: all 0.5s ease-in-out;
 }
 
-.nav-btn::after {
+.nav-links::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: 0; /* Bottom ko 0 kiya to underline closer lagega */
+  bottom: -4px;
   height: 2px;
   width: 0%;
   background: linear-gradient(to right, #00f260, #0575e6);
-  transition: width 0.3s ease-in-out;
+ transition: background-color 0.4s ease;
 }
 
-.nav-btn:hover::after {
+.nav-links:hover::after {
   width: 100%;
 }
 
-.nav-btn:hover {
+.nav-links:hover {
   color: #00ffc3;
   transform: translateY(-2px);
 }
 
-/* Optional: Active link (e.g., when scrolling) */
-.nav-btn.active {
-  color: #00ffc3;
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+  }
 }
 
-.nav-btn.active::after {
-  width: 100%;
-}
+
+  .nav-left {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+  }
 
 
 

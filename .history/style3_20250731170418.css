@@ -54,12 +54,40 @@ header {
 }
 
 
-.nav-btn {
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.hamburger {
+  display: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Make menu responsive on mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+ .nav-btn {
   position: relative;
   padding: 10px 14px;
   font-size: 20px;
   font-weight: 700;
-  color:white;
+  color: #fff;
   text-decoration: none;
   font-family: 'Poppins', sans-serif;
   transition: color 0.3s ease, transform 0.3s ease;
@@ -93,6 +121,41 @@ header {
 .nav-btn.active::after {
   width: 100%;
 }
+
+}
+
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #3e3b56;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    z-index: 9999; /* ensures it's on top */
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+
+  .nav-left {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+  }
 
 
 

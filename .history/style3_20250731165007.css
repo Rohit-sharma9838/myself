@@ -49,50 +49,90 @@ header {
   align-items: center;
   padding: 15px 30px;
   backdrop-filter: blur(10px);
-  background:linear-gradient(270deg, #74ebd5, #9face6); /* transparent black */
+  background: rgba(0, 0, 0, 0.5); /* transparent black */
   z-index: 1000;
 }
 
 
-.nav-btn {
-  position: relative;
-  padding: 10px 14px;
-  font-size: 20px;
-  font-weight: 700;
-  color:white;
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
   text-decoration: none;
-  font-family: 'Poppins', sans-serif;
-  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.nav-btn::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0; /* Bottom ko 0 kiya to underline closer lagega */
-  height: 2px;
-  width: 0%;
-  background: linear-gradient(to right, #00f260, #0575e6);
-  transition: width 0.3s ease-in-out;
+.hamburger {
+  display: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
 }
 
-.nav-btn:hover::after {
-  width: 100%;
+/* Make menu responsive on mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    background: pink;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
 }
 
-.nav-btn:hover {
-  color: #00ffc3;
-  transform: translateY(-2px);
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #3e3b56;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    z-index: 9999; /* ensures it's on top */
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+  }
 }
 
-/* Optional: Active link (e.g., when scrolling) */
-.nav-btn.active {
-  color: #00ffc3;
-}
 
-.nav-btn.active::after {
-  width: 100%;
-}
+  .nav-left {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+  }
 
 
 
