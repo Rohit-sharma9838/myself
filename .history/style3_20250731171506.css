@@ -11,7 +11,7 @@ html {
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background:linear-gradient(270deg, #74ebd5, #9face6);
+  background: linear-gradient(to bottom, #1c1c1c, #2b2b2b);
   color: black;
 }
 
@@ -41,37 +41,25 @@ a {
 /* ✅ NAVBAR CONTAINER */
 /* 🌟 NAV CONTAINER – Glassmorphism + Gradient Border */
 
-/* Base header styling */
 header {
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
-  background: linear-gradient(270deg, #74ebd5, #9face6);
-  color: #fff;
-  position: sticky;
-  top: 0;
+  backdrop-filter: blur(10px);
+  background:linear-gradient(270deg, #74ebd5, #9face6); /* transparent black */
   z-index: 1000;
 }
 
-/* Logo styling */
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-/* Navbar links */
-nav {
-  display: flex;
-  gap: 25px;
-}
 
 .nav-btn {
   position: relative;
   padding: 10px 14px;
-  font-size: 18px;
-  font-weight: 600;
-  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  color:white;
   text-decoration: none;
   font-family: 'Poppins', sans-serif;
   transition: color 0.3s ease, transform 0.3s ease;
@@ -81,7 +69,7 @@ nav {
   content: "";
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: 0; /* Bottom ko 0 kiya to underline closer lagega */
   height: 2px;
   width: 0%;
   background: linear-gradient(to right, #00f260, #0575e6);
@@ -97,35 +85,15 @@ nav {
   transform: translateY(-2px);
 }
 
-/* Hamburger menu */
-.menu-toggle {
-  display: none;
-  font-size: 30px;
-  cursor: pointer;
+/* Optional: Active link (e.g., when scrolling) */
+.nav-btn.active {
+  color: #00ffc3;
 }
 
-/* Mobile styles */
-@media (max-width: 768px) {
-  nav {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background: #111;
-    flex-direction: column;
-    width: 100%;
-    display: none;
-    text-align: center;
-    padding: 10px 0;
-  }
-
-  nav.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
+.nav-btn.active::after {
+  width: 100%;
 }
+
 
 
 /* 📱 RESPONSIVE – Clean stacked layout on mobile */
@@ -148,18 +116,12 @@ nav {
 }
 
 .subtitle {
-  font-size: 22px;
-  font-weight: 700;
-  color: #111; /* Or keep #fff if background is dark */
-  letter-spacing: 1px;
-  word-spacing: 4px;
-  margin-top: 10px;
-  line-height: 1.6;
-  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+  color: #e0e0e0;
 }
 
 #hero {
-  background: linear-gradient(270deg, #74ebd5, #9face6);
+  background: linear-gradient(-45deg, #007acc, #00bcd4, #4a90e2, #2dd3c0);
   background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
 }
@@ -197,7 +159,7 @@ nav {
 .buttons .btn.green {
   position: relative;
   background-color: #00c896;
-  color: black;
+  color: white;
   padding: 12px 24px 12px 40px; /* extra space for icon */
   border-radius: 8px;
   font-weight: 600;

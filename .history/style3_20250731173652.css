@@ -47,7 +47,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
-  background: linear-gradient(270deg, #74ebd5, #9face6);
+  background: #111;
   color: #fff;
   position: sticky;
   top: 0;
