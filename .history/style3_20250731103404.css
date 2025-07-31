@@ -379,7 +379,7 @@ a {
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
 }
-.typing-text,
+
 .scroll-text {
   min-width: 600px;
   font-size: 1.20rem;
