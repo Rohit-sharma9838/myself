@@ -88,12 +88,11 @@ nav {
   display: flex;
   gap: 25px;
 }
-#navbar li {
-  list-style: none;
-  position: relative;
-  padding-left: 15px;
-}
 
+#navbar  {
+  position: relative;
+  padding-left: 15px; /* space for @ symbol */
+}
 #navbar li::before {
   content: "@";
   position: absolute;

@@ -88,13 +88,8 @@ nav {
   display: flex;
   gap: 25px;
 }
-#navbar li {
-  list-style: none;
-  position: relative;
-  padding-left: 15px;
-}
 
-#navbar li::before {
+li::before {
   content: "@";
   position: absolute;
   left: 0;

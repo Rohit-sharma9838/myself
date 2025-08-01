@@ -88,22 +88,8 @@ nav {
   display: flex;
   gap: 25px;
 }
-#navbar li {
-  list-style: none;
-  position: relative;
-  padding-left: 15px;
-}
 
-#navbar li::before {
-  content: "@";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #000; /* ya koi color tum chaho */
-  font-size: 16px;
-}
-.nav-btn{
+.nav-btn li{
   position: relative;
   padding: 5px 12px;
   font-size: 18px;
