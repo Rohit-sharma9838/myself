@@ -282,7 +282,7 @@ nav {
 }
 
 /* Sections */
-.section {
+.section h2{
  font-size: 36px;
   font-weight: 700;
   color: #1f2937;
@@ -290,7 +290,7 @@ nav {
   margin-bottom: 20px;
   text-shadow: 0 0 5px #00f2fe, 0 0 10px #4facfe;
   animation: glowSkills 2s ease-in-out infinite alternate;
-  
+  text-decoration: underline;
 }
 
 /* Skill Section Background Animation */
@@ -772,7 +772,7 @@ nav {
 
 
 .project-title {
-  color: #a259ff; /* Or any visible color */
+  color: #ffffff; /* Or any visible color */
   font-weight: bold;
   font-size: 24px;
   text-decoration: underline;
@@ -799,7 +799,6 @@ nav {
   color: #0F1117;
   animation: floatUpFade 3s ease-in-out infinite;
   margin-bottom: 16px;
-  text-decoration: none;
 }
 
 
