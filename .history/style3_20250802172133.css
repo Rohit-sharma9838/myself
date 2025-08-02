@@ -730,38 +730,11 @@ nav {
 
 
 /* Projects */
-.section h1 {
-  font-size: 48px;
-  font-weight: bold;
-  color: black;
-  text-align: center;
-  animation: glowFloat 3s ease-in-out infinite;
-  text-shadow: linear-gradient(270deg, #74ebd5, #9face6);
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  text-decoration: underline;
-}
-
-@keyframes glowFloat {
-  0% {
-    transform: translateY(0px);
-    text-shadow: linear-gradient(270deg, #74ebd5, #9face6);
-  }
-  50% {
-    transform: translateY(-8px);
-    text-shadow:linear-gradient(270deg, #74ebd5, #9face6);
-  }
-  100% {
-    transform: translateY(0px);
-    text-shadow: linear-gradient(270deg, #74ebd5, #9face6);
-  }
-}
-
 #projects {
   background: linear-gradient(-45deg, #ffe0e0, #e0fff4, #e0eaff, #fff0e0);
   background-size: 400% 400%;
   animation: animatedGradient 15s ease infinite;
-  padding: 60px 20px;
+  padding: 40px 20px;
 }
 
 @keyframes animatedGradient {
@@ -1120,7 +1093,7 @@ footer {
   }
 
   .section {
-    font-size: 36px;
+    font-size: 28px;
   }
 
   .skill-circle {

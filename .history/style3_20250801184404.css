@@ -528,7 +528,7 @@ nav {
 
  .typing-text {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      font-size: 10px;
+      font-size: 12px;
       font-weight: 200;
       color: black;
       width: 24ch; /* Limit width to characters */
@@ -730,33 +730,6 @@ nav {
 
 
 /* Projects */
-.section h1 {
-  font-size: 48px;
-  font-weight: bold;
-  color: black;
-  text-align: center;
-  animation: glowFloat 3s ease-in-out infinite;
-  text-shadow: linear-gradient(270deg, #74ebd5, #9face6);
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  text-decoration: underline;
-}
-
-@keyframes glowFloat {
-  0% {
-    transform: translateY(0px);
-    text-shadow: linear-gradient(270deg, #74ebd5, #9face6);
-  }
-  50% {
-    transform: translateY(-8px);
-    text-shadow:linear-gradient(270deg, #74ebd5, #9face6);
-  }
-  100% {
-    transform: translateY(0px);
-    text-shadow: linear-gradient(270deg, #74ebd5, #9face6);
-  }
-}
-
 #projects {
   background: linear-gradient(-45deg, #ffe0e0, #e0fff4, #e0eaff, #fff0e0);
   background-size: 400% 400%;
@@ -771,19 +744,20 @@ nav {
 }
 
 .project {
-  animation: fadeInUp 1s ease-in-out;
+  background: #fff;
+  padding: 20px;
+  margin: 30px auto; /* center horizontally */
+  border: 3px solid #c0f2ff;
+  border-radius: 15px;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+
+  /* 💡 Set fixed or max width */
+  max-width: 800px;   /* Change this as needed */
+  width: 90%;   /* responsive fallback */
 }
 
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 .project-wrapper {
   max-width: 1000px;
@@ -800,7 +774,7 @@ nav {
 .project-title {
   color: #a259ff; /* Or any visible color */
   font-weight: bold;
-  font-size: 32px;
+  font-size: 24px;
   text-decoration: underline;
 }
 
@@ -824,12 +798,9 @@ nav {
   font-family: 'Poppins', sans-serif;
   color: #0F1117;
   animation: floatUpFade 3s ease-in-out infinite;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
   text-decoration: none;
-  font-size: 1.5rem;
-  line-height: 1.6;
 }
-
 
 
 
@@ -839,63 +810,55 @@ nav {
   width: 100%;
   max-width: 700px;
   height: 315px;
-  border-radius: 12px;
-  border: 3px solid #00d4ff; /* glowing border */
-  margin: 20px auto;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+  border: none;
+  margin: 10px auto;
 }
-
-.project iframe:hover,
-.project video:hover {
-  transform: scale(1.02);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-}
-
 
 .project-buttons {
-  margin-top: 20px;
-  text-align: center;
+  margin-top: 15px;
 }
 
 .project-buttons .btn {
   display: inline-block;
-  padding: 12px 22px;
-  margin: 10px;
-  border-radius: 10px;
-  font-size: 16px;
-  font-weight: 600;
+  padding: 10px 18px;
+  margin-right: 10px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  border: none;
-  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* GitHub Button */
 .btn-github {
   background-color: #24292e;
   color: #fff;
+  border: 1px solid transparent;
 }
 
 .btn-github:hover {
   background-color: #000;
-  transform: translateY(-3px);
-  box-shadow: 0 12px 18px #ffcc00;
+   transform: translateY(-2px);
+  box-shadow: 0 12px 12px #ffcc00;
 }
 
 /* Live Demo Button */
 .btn-live {
   background-color: #007bff;
   color: #fff;
+  border: 1px solid transparent;
 }
 
 .btn-live:hover {
   background-color: #0056b3;
-  transform: translateY(-3px);
-  box-shadow: 0 12px 18px #00ffd5;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 12px #ffcc00;
 }
 
+.btn:hover {
+  transform: translateY(-2px) scale(1.03);
+}
 
 /* Contact Form */
 #contact {
@@ -946,80 +909,89 @@ nav {
 }
 
 /* Contact Info */
-.contact-info {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-  margin-top: 40px;
-  font-size: 17px;
-  background-color: #2c3e50;  /* Optional dark background */
-  padding: 30px;
-  border-radius: 12px;
-}
 
 .contact-info {
-  background-color: transparent;  /* background hata diya */
-  padding: 0;                     /* padding bhi remove */
-  border-radius: 0;               /* rounded box hat gaya */
+  background-color: #f1faff;
+  padding: 25px 30px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 119, 182, 0.12);
+  font-family: 'Poppins', sans-serif;
+}
+
+.contact-info p {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-  margin-top: 30px;
+  align-items: flex-start;
+  margin: 12px 0;
+  font-size: 1rem;
+  color: #0a0a0a;
+  line-height: 1.6;
 }
 
-
-.contact-info span:hover {
-  transform: translateY(-3px);
-}
-
-
-.contact-info i {
-  color: black; /* green icons */
-  font-size: 20px;
+.contact-info p strong {
+  width: 110px; /* Fixed width for perfect alignment */
+  display: inline-block;
+  color: #0077b6;
+  flex-shrink: 0;
 }
 
 .contact-info a {
+  color: black;
   text-decoration: none;
-  color: #2C3E50; /* link teal */
-  transition: 0.3s ease;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  word-break: break-word;
+  flex: 1;
 }
 
 .contact-info a:hover {
-  color: 	#6C757D; /* slightly darker teal on hover */
+  color: #023e8a;
   text-decoration: underline;
 }
 
+/* WhatsApp Floating Button */
+@keyframes glowingPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 5px 2px rgba(37, 211, 102, 0.6);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px 8px rgba(37, 211, 102, 0.9);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 5px 2px rgba(37, 211, 102, 0.6);
+  }
+}
 
-/* Hover effect to enhance on hover */
-
-/* WhatsApp Button CSS */
 .whatsapp-button {
   position: fixed;
-  bottom: 20px;    /* Bottom se 20px upar */
-  right: 20px;     /* Right se 20px andar */
-  background-color: #25D366;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
   color: white;
-  padding: 12px 20px;
+  padding: 14px 26px;
   border-radius: 50px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
   text-decoration: none;
-  font-size: 16px;
-  font-weight: bold;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-  animation: pulse 2s infinite;
-  z-index: 1000;   /* Sab cheezon se upar */
+  z-index: 1000;
+  cursor: pointer;
+
+  animation: glowingPulse 2.5s ease-in-out infinite;
+  transition: background 0.3s ease;
+  box-shadow: 0 0 5px 2px rgba(37, 211, 102, 0.6);
 }
 
-/* Glowing Animation */
-@keyframes pulse {
-  0%   { box-shadow: 0 0 0 rgba(37, 211, 102, 0.7); }
-  50%  { box-shadow: 0 0 20px 10px rgba(37, 211, 102, 0.7); }
-  100% { box-shadow: 0 0 0 rgba(37, 211, 102, 0.7); }
+/* Hover effect to enhance on hover */
+.whatsapp-button:hover {
+  background: #1ebe5d;
+  box-shadow: 0 0 30px 12px rgba(37, 211, 102, 1);
+  transform: scale(1.15);
+  transition: all 0.3s ease;
 }
-
-
-
 
 /* Footer */
 footer {
@@ -1120,7 +1092,7 @@ footer {
   }
 
   .section {
-    font-size: 36px;
+    font-size: 28px;
   }
 
   .skill-circle {

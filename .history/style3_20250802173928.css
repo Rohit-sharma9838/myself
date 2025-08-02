@@ -738,8 +738,6 @@ nav {
   animation: glowFloat 3s ease-in-out infinite;
   text-shadow: linear-gradient(270deg, #74ebd5, #9face6);
   margin-bottom: 20px;
-  text-transform: uppercase;
-  text-decoration: underline;
 }
 
 @keyframes glowFloat {

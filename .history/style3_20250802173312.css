@@ -733,27 +733,25 @@ nav {
 .section h1 {
   font-size: 48px;
   font-weight: bold;
-  color: black;
+  color: #00ffff;
   text-align: center;
   animation: glowFloat 3s ease-in-out infinite;
-  text-shadow: linear-gradient(270deg, #74ebd5, #9face6);
+  text-shadow: 0 0 5px #00f0ff, 0 0 10px #00f0ff, 0 0 15px #00f0ff;
   margin-bottom: 20px;
-  text-transform: uppercase;
-  text-decoration: underline;
 }
 
 @keyframes glowFloat {
   0% {
     transform: translateY(0px);
-    text-shadow: linear-gradient(270deg, #74ebd5, #9face6);
+    text-shadow: 0 0 5px #00f0ff;
   }
   50% {
     transform: translateY(-8px);
-    text-shadow:linear-gradient(270deg, #74ebd5, #9face6);
+    text-shadow: 0 0 20px #00f0ff;
   }
   100% {
     transform: translateY(0px);
-    text-shadow: linear-gradient(270deg, #74ebd5, #9face6);
+    text-shadow: 0 0 5px #00f0ff;
   }
 }
 

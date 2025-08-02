@@ -730,33 +730,6 @@ nav {
 
 
 /* Projects */
-.section h1 {
-  font-size: 48px;
-  font-weight: bold;
-  color: black;
-  text-align: center;
-  animation: glowFloat 3s ease-in-out infinite;
-  text-shadow: linear-gradient(270deg, #74ebd5, #9face6);
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  text-decoration: underline;
-}
-
-@keyframes glowFloat {
-  0% {
-    transform: translateY(0px);
-    text-shadow: linear-gradient(270deg, #74ebd5, #9face6);
-  }
-  50% {
-    transform: translateY(-8px);
-    text-shadow:linear-gradient(270deg, #74ebd5, #9face6);
-  }
-  100% {
-    transform: translateY(0px);
-    text-shadow: linear-gradient(270deg, #74ebd5, #9face6);
-  }
-}
-
 #projects {
   background: linear-gradient(-45deg, #ffe0e0, #e0fff4, #e0eaff, #fff0e0);
   background-size: 400% 400%;
@@ -823,10 +796,10 @@ nav {
 .project-description {
   font-family: 'Poppins', sans-serif;
   color: #0F1117;
-  animation: floatUpFade 3s ease-in-out infinite;
-  margin-bottom: 14px;
+  animation: floatUpFade 4s ease-in-out infinite;
+  margin-bottom: 16px;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   line-height: 1.6;
 }
 
@@ -1120,7 +1093,7 @@ footer {
   }
 
   .section {
-    font-size: 36px;
+    font-size: 28px;
   }
 
   .skill-circle {
