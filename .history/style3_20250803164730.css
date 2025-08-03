@@ -860,8 +860,8 @@ nav {
 
 .project-buttons .btn {
   display: inline-block;
-  padding: 12px 22px;
-  margin: 12px;
+  padding: 12px 16px;
+  margin: 10px;
   border-radius: 10px;
   font-size: 16px;
   font-weight: 600;
