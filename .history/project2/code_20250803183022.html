@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Full Screen Code Editor</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 10px 0;
+      background: #333;
+      color: white;
+      padding: 10px;
+    }
+
+    .main {
+      flex: 1;
+      display: flex;
+      height: 100%;
+    }
+
+    .left, .right {
+      flex: 1;
+      padding: 20px;
+      height: 100%;
+    }
+
+    .left {
+      background: #f5f5f5;
+      border-right: 2px solid #ccc;
+      display: flex;
+      flex-direction: column;
+    }
+
+    select {
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    textarea {
+      flex: 1;
+      width: 100%;
+      font-family: monospace;
+      font-size: 14px;
+      padding: 10px;
+      resize: none;
+    }
+
+    .right iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: white;
+    }
+
+    .right h3 {
+      margin: 0 0 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Live Code Editor (Full Screen)</h1>
+
+  <div class="main">
+    <div class="left">
+      <select id="editorSelect">
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+        <option value="js">JavaScript</option>
+      </select>
+
+      <textarea id="editorBox" placeholder="Type your code..."></textarea>
+    </div>
+
+    <div class="right">
+      <h3>Live Output:</h3>
+      <iframe id="output"></iframe>
+    </div>
+  </div>
+
+  <script>
+    const editorBox = document.getElementById("editorBox");
+    const editorSelect = document.getElementById("editorSelect");
+    const output = document.getElementById("output");
+
+    let htmlCode = "";
+    let cssCode = "";
+    let jsCode = "";
+
+    function updatePreview() {
+      const finalCode = `
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <style>${cssCode}</style>
+        </head>
+        <body>
+          ${htmlCode}
+          <script>${jsCode}<\/script>
+        </body>
+        </html>
+      `;
+      output.srcdoc = finalCode;
+    }
+
+    function loadEditor() {
+      const selected = editorSelect.value;
+      if (selected === "html") {
+        editorBox.value = htmlCode;
+      } else if (selected === "css") {
+        editorBox.value = cssCode;
+      } else if (selected === "js") {
+        editorBox.value = jsCode;
+      }
+    }
+
+    editorBox.addEventListener("input", () => {
+      const selected = editorSelect.value;
+      if (selected === "html") {
+        htmlCode = editorBox.value;
+      } else if (selected === "css") {
+        cssCode = editorBox.value;
+      } else if (selected === "js") {
+        jsCode = editorBox.value;
+      }
+      updatePreview();
+    });
+
+    editorSelect.addEventListener("change", loadEditor);
+
+    // Initialize
+    loadEditor();
+    updatePreview();
+  </script>
+
+</body>
+</html>

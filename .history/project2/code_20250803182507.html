@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Live Code Editor</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      background: #f0f0f0;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .editor {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .editor textarea {
+      width: 300px;
+      height: 200px;
+      padding: 10px;
+      font-family: monospace;
+      resize: vertical;
+      background: #fff;
+      border: 1px solid #ccc;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: 1px solid #ccc;
+      background: white;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Live Code Editor</h1>
+
+  <div class="editor">
+    <div>
+      <h3>HTML</h3>
+      <textarea id="htmlCode" placeholder="Type HTML here..."></textarea>
+    </div>
+
+    <div>
+      <h3>CSS</h3>
+      <textarea id="cssCode" placeholder="Type CSS here..."></textarea>
+    </div>
+
+    <div>
+      <h3>JavaScript</h3>
+      <textarea id="jsCode" placeholder="Type JavaScript here..."></textarea>
+    </div>
+  </div>
+
+  <h2>Live Output:</h2>
+  <iframe id="output"></iframe>
+
+  <script>
+    const htmlCode = document.getElementById("htmlCode");
+    const cssCode = document.getElementById("cssCode");
+    const jsCode = document.getElementById("jsCode");
+    const output = document.getElementById("output");
+
+    function runCode() {
+      const html = htmlCode.value;
+      const css = `<style>${cssCode.value}</style>`;
+      const js = `<script>${jsCode.value}<\/script>`;
+      const fullCode = html + css + js;
+      output.srcdoc = fullCode;
+    }
+
+    htmlCode.addEventListener("input", runCode);
+    cssCode.addEventListener("input", runCode);
+    jsCode.addEventListener("input", runCode);
+  </script>
+
+</body>
+</html>

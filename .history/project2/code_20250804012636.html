@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css">
+  <title>Rohit's Live Code Editor</title> 
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/esprima/4.0.1/esprima.min.js"></script>
+  
+</head>
+<body>
+  <header>🔥 Rohit's Live Code Editor</header>
+
+  <div class="main">
+    <div class="left">
+      <select id="editorSelect">
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+        <option value="js">JavaScript</option>
+      </select>
+      <textarea id="editorBox" placeholder="Write your code here..."></textarea>
+      <button id="runBtn">▶ Run</button>
+      <div id="errorBox"></div>
+    </div>
+
+    <div class="right">
+      <h3>📺 Live Output</h3>
+      <iframe id="output"></iframe>
+    </div>
+  </div>
+  <script src="run.js"></script>
+</body>
+</html>

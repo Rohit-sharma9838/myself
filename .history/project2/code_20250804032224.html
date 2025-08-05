@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rohit's Live Code Editor</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- CodeMirror Base -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@codemirror/basic-setup@0.19.1/dist/index.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/@codemirror/basic-setup@0.19.1/dist/index.min.js"></script>
+
+<!-- CodeMirror for HTML, CSS, JS languages -->
+<script src="https://cdn.jsdelivr.net/npm/@codemirror/lang-html@0.19.4/dist/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@codemirror/lang-css@0.19.1/dist/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@codemirror/lang-javascript@0.19.5/dist/index.min.js"></script>
+
+
+  <!-- Esprima for JS validation -->
+  <script src="https://cdn.jsdelivr.net/npm/esprima@4.0.1/dist/esprima.min.js"></script>
+
+</head>
+
+<body>
+  <!-- Header -->
+  <header><span>🔥 Rohit's Live Code Editor</span></header>
+
+  <!-- Main Layout -->
+  <div class="main">
+
+    <!-- Editor Panel -->
+    <div class="left">
+      <select id="editorSelect">
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+        <option value="js">JavaScript</option>
+      </select>
+
+      <textarea id="editorBox" placeholder="Write your code here..."></textarea>
+
+      <button id="runBtn">Run ▶</button>
+
+      <!-- Error Box -->
+      <div id="errorBox"></div>
+    </div>
+
+    <!-- Output Panel -->
+    <div class="right">
+      <h3>📺 Live Output</h3>
+      <iframe id="output"></iframe>
+    </div>
+  </div>
+
+  <!-- JS Logic -->
+  <script src="run.js"></script>
+</body>
+</html>

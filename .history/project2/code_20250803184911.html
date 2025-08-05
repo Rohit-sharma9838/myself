@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rohit's Live Code Editor</title>
+
+  <!-- CodeMirror CSS & JS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/dracula.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/show-hint.min.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/htmlmixed/htmlmixed.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/javascript/javascript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/css/css.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/closetag.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/matchtags.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/show-hint.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/html-hint.min.js"></script>
+
+  <!-- Esprima for JS syntax error detection -->
+  <script src="https://cdn.jsdelivr.net/npm/esprima@4.0.1/dist/esprima.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #1e1e2f;
+      color: white;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: #0d1117;
+      padding: 15px 20px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      color: #58a6ff;
+      border-bottom: 1px solid #30363d;
+    }
+
+    .main {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .left, .right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .left {
+      background-color: #161b22;
+      padding: 10px;
+      border-right: 1px solid #30363d;
+    }
+
+    .right {
+      background-color: #0d1117;
+      padding: 10px;
+    }
+
+    select {
+      margin-bottom: 10px;
+      padding: 10px;
+      background-color: #0d1117;
+      color: #fff;
+      border: 1px solid #30363d;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .CodeMirror {
+      flex: 1;
+      height: 100%;
+      font-size: 15px;
+      border: 1px solid #3c3c3c;
+      border-radius: 6px;
+    }
+
+    iframe {
+      flex: 1;
+      width: 100%;
+      border: 1px solid #30363d;
+      background-color: #fff;
+      border-radius: 5px;
+    }
+
+    .error-box {
+      margin-top: 5px;
+      color: #ff5555;
+      font-size: 13px;
+      font-family: monospace;
+      min-height: 18px;
+    }
+
+    @media (max-width: 768px) {
+      .main {
+        flex-direction: column;
+      }
+
+      .left, .right {
+        height: 50%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>🔥 Rohit's Live Code Editor</header>
+
+  <div class="main">
+    <div class="left">
+      <select id="editorSelect">
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+        <option value="js">JavaScript</option>
+      </select>
+      <textarea id="editorBox"></textarea>
+      <div id="errorBox" class="error-box"></div>
+    </div>
+
+    <div class="right">
+      <h3 style="margin: 0 0 10px; color: #58a6ff;">📺 Live Output</h3>
+      <iframe id="output"></iframe>
+    </div>
+  </div>
+
+  <script>
+    const editorSelect = document.getElementById("editorSelect");
+    const output = document.getElementById("output");
+    const errorBox = document.getElementById("errorBox");
+
+    let htmlCode = "";
+    let cssCode = "";
+    let jsCode = "";
+
+    const editor = CodeMirror.fromTextArea(document.getElementById("editorBox"), {
+      mode: "htmlmixed",
+      theme: "dracula",
+      lineNumbers: true,
+      autoCloseTags: true,
+      matchTags: {bothTags: true},
+      extraKeys: {
+        "Ctrl-Space": "autocomplete"
+      }
+    });
+
+    function updatePreview() {
+      const finalCode = `
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <style>${cssCode}</style>
+        </head>
+        <body>
+          ${htmlCode}
+          <script>
+            try {
+              ${jsCode}
+            } catch(e) {
+              document.body.innerHTML += '<pre style="color:red;">' + e + '</pre>';
+            }
+          <\/script>
+        </body>
+        </html>
+      `;
+      output.srcdoc = finalCode;
+    }
+
+    editor.on("change", () => {
+      const selected = editorSelect.value;
+      const code = editor.getValue();
+
+      if (selected === "html") {
+        htmlCode = code;
+        errorBox.textContent = "";
+      } else if (selected === "css") {
+        cssCode = code;
+        errorBox.textContent = "";
+      } else if (selected === "js") {
+        jsCode = code;
+        try {
+          esprima.parseScript(jsCode);
+          errorBox.textContent = "";
+        } catch (err) {
+          errorBox.textContent = "🛑 " + err.description;
+        }
+      }
+
+      updatePreview();
+    });
+
+    editorSelect.addEventListener("change", () => {
+      const selected = editorSelect.value;
+      if (selected === "html") {
+        editor.setValue(htmlCode);
+        editor.setOption("mode", "htmlmixed");
+      } else if (selected === "css") {
+        editor.setValue(cssCode);
+        editor.setOption("mode", "css");
+      } else if (selected === "js") {
+        editor.setValue(jsCode);
+        editor.setOption("mode", "javascript");
+      }
+    });
+
+    // Load default empty editor
+    editor.setValue("");
+    updatePreview();
+  </script>
+
+</body>
+</html>

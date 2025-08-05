@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Rohit's Live Code Editor</title>
+
+<!-- CodeMirror CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/dracula.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/show-hint.min.css" />
+
+<!-- CodeMirror JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/htmlmixed/htmlmixed.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/javascript/javascript.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/css/css.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/closetag.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/matchtags.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/show-hint.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/html-hint.min.js"></script>
+
+<!-- Esprima for JS syntax checking -->
+<script src="https://cdn.jsdelivr.net/npm/esprima@4.0.1/dist/esprima.min.js"></script>
+
+<style>
+  html, body {
+    height: 100%;
+    margin: 0;
+    background-color: #1e1e2f;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    background: #0d1117;
+    padding: 15px 20px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #58a6ff;
+    text-align: center;
+    border-bottom: 1px solid #30363d;
+  }
+  .main {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
+  .left, .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .left {
+    background-color: #161b22;
+    border-right: 1px solid #30363d;
+    padding: 10px;
+    height: 100%;
+  }
+  select {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #30363d;
+    background: #0d1117;
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .CodeMirror {
+    flex-grow: 1;
+    height: 100%;
+    border-radius: 6px;
+    font-size: 15px;
+    line-height: 1.4;
+    border: 1px solid #3c3c3c;
+  }
+  .right {
+    background-color: #0d1117;
+    padding: 10px;
+    height: 100%;
+  }
+  iframe {
+    width: 100%;
+    flex-grow: 1;
+    border-radius: 5px;
+    border: 1px solid #30363d;
+    background: white;
+  }
+  .error-box {
+    margin-top: 5px;
+    color: #ff5555;
+    font-family: monospace;
+    font-size: 13px;
+    min-height: 18px;
+  }
+  @media (max-width: 768px) {
+    .main {
+      flex-direction: column;
+    }
+    .left, .right {
+      height: 50%;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>🔥 Rohit's Live Code Editor</header>
+
+<div class="main">
+  <div class="left">
+    <select id="editorSelect">
+      <option value="html">HTML</option>
+      <option value="css">CSS</option>
+      <option value="js">JavaScript</option>
+    </select>
+    <textarea id="editorBox"></textarea>
+    <div id="errorBox" class="error-box"></div>
+  </div>
+  <div class="right">
+    <h3 style="margin:0 0 10px; color:#58a6ff;">📺 Live Output</h3>
+    <iframe id="output"></iframe>
+  </div>
+</div>
+
+<script>
+  const editorSelect = document.getElementById('editorSelect');
+  const output = document.getElementById('output');
+  const errorBox = document.getElementById('errorBox');
+  const textarea = document.getElementById('editorBox');
+
+  let htmlCode = '';
+  let cssCode = '';
+  let jsCode = '';
+
+  const editor = CodeMirror.fromTextArea(textarea, {
+    mode: 'htmlmixed',
+    theme: 'dracula',
+    lineNumbers: true,
+    autoCloseTags: true,
+    matchTags: {bothTags: true},
+    extraKeys: {"Ctrl-Space": "autocomplete"},
+  });
+
+  function updatePreview() {
+    const finalCode = `
+      <!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css" />
+  <style>
+    body, html { height: 100%; margin: 0; }
+    .CodeMirror { height: 100vh; }
+  </style>
+</head>
+<body>
+
+<textarea id="editor"></textarea>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/javascript/javascript.min.js"></script>
+<script>
+  var editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
+    mode: "javascript",
+    lineNumbers: true,
+    theme: "default"
+  });
+  editor.refresh();
+</script>
+
+</body>
+</html>
+
+    `;
+    output.srcdoc = finalCode;
+  }
+
+  editor.on('change', () => {
+    const selected = editorSelect.value;
+    const code = editor.getValue();
+
+    if (selected === 'html') {
+      htmlCode = code;
+      errorBox.textContent = '';
+    } else if (selected === 'css') {
+      cssCode = code;
+      errorBox.textContent = '';
+    } else if (selected === 'js') {
+      jsCode = code;
+      try {
+        esprima.parseScript(jsCode);
+        errorBox.textContent = '';
+      } catch (err) {
+        errorBox.textContent = '🛑 ' + err.description;
+      }
+    }
+
+    updatePreview();
+  });
+
+  editorSelect.addEventListener('change', () => {
+    const selected = editorSelect.value;
+    if (selected === 'html') {
+      editor.setOption('mode', 'htmlmixed');
+      editor.setValue(htmlCode);
+    } else if (selected === 'css') {
+      editor.setOption('mode', 'css');
+      editor.setValue(cssCode);
+    } else if (selected === 'js') {
+      editor.setOption('mode', 'javascript');
+      editor.setValue(jsCode);
+    }
+    editor.focus();
+  });
+
+  // Initial setup
+  editor.setValue('');
+  updatePreview();
+</script>
+
+</body>
+</html>

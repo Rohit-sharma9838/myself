@@ -854,7 +854,8 @@ nav {
 
 
 .project-buttons {
-  margin-top: 20px;
+  margin-top: 10px;
+  gap: 20px;
   text-align: center;
 }
 
