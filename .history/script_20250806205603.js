@@ -17,6 +17,6 @@ const text = "I am a motivated and quick-learning fresher with hands-on experien
       setTimeout(type, erasingSpeed);
     } 
 
-  }
+    
 
   type();

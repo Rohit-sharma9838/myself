@@ -899,10 +899,9 @@ nav {
 
 
 /* Contact Form */
-.contact-section {
-  background: #d0f0f7; /* Soft pastel aqua like your skills section */
+#contact-section {
+  background: #e6f7f9;
   padding: 60px 20px;
-  font-family: 'Segoe UI', sans-serif;
 }
 
 .contact-container {
@@ -914,315 +913,71 @@ nav {
   justify-content: center;
 }
 
-/* Common box styling */
-/* Common styling */
 .feedback-form, .contact-info {
-  flex: 1 1 420px;
-  background: linear-gradient(135deg, #f0fbff, #e6faff);
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.08);
-  transition: background 0.8s ease, transform 0.3s ease;
-  background-size: 200% 200%;
-}
-
-/* Feedback card hover gradient animation */
-.feedback-form:hover {
-  background: #facc15;
-  background-size: 300% 300%;
-  animation: gradientShift1 4s ease infinite;
-  transform: scale(1.02);
-  box-shadow: 0 0 25px rgba(0, 128, 255, 0.2);
-}
-
-/* Contact card hover gradient animation */
-.contact-info:hover {
-  background: linear-gradient(-45deg, #ffe0b2, #ffccbc, #fff3e0);
-  background-size: 300% 300%;
-  animation: gradientShift2 4s ease infinite;
-  transform: scale(1.02);
-  box-shadow: 0 0 25px rgba(255, 128, 0, 0.2);
-}
-
-/* Gradient Keyframes */
-@keyframes gradientShift1 {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-@keyframes gradientShift2 {
-  0% { background-position: 100% 50%; }
-  50% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
-}
-
-
-
-
-.feedback-form h2 {
-  text-align: center;
-  font-size: 28px;
-  color: #0284c7;
-  margin-bottom: 30px;
-  position: relative;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.feedback-form h2::after {
-  content: "";
-  position: absolute;
-  width: 80px;
-  height: 3px;
-  background: #fbbf24;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 2px;
-}
-
-.feedback-form input,
-.feedback-form textarea {
-  width: 100%;
-  padding: 12px 15px;
-  margin-bottom: 15px;
-  border: 2px solid #cce7ff;
-  border-radius: 8px;
-  outline: none;
-  transition: 0.3s ease;
-  font-size: 16px;
-  box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
-}
-
-.feedback-form input:focus,
-.feedback-form textarea:focus {
-  border-color: #00bcd4;
-  box-shadow: 0 0 8px rgba(0, 188, 212, 0.4);
-}
-
-
-.feedback-form button {
-  background-color: #0288d1;
-  color: white;
-  padding: 12px 25px;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.feedback-form button:hover {
-  background-color: #0277bd;
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 188, 212, 0.3);
-}
-
-.feedback-form button:active {
-  transform: scale(0.97);
-}
-
-
-.contact-info {
-  flex: 1 1 420px;
-  background: linear-gradient(to bottom right, #fff1e6, #ffe8d6);
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(255, 122, 80, 0.2);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  font-family: 'Poppins', sans-serif;
-}
-
-.contact-info h2 {
-  text-align: center;
-  font-size: 28px;
-  color: #e76f51;
-  margin-bottom: 30px;
-  position: relative;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-.contact-info h2::after {
-  content: "";
-  position: absolute;
-  width: 80px;
-  height: 3px;
-  background: #f4a261;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 2px;
-}
-
-.contact-detail {
-  display: flex;
-  align-items: center;
+  flex: 1 1 400px;
   background: #fff;
-  padding: 12px 18px;
-  margin-bottom: 15px;
-  border-radius: 12px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
-  transition: 0.3s ease;
-}
-
-.contact-detail i {
-  color: #e76f51;
-  font-size: 20px;
-  margin-right: 15px;
-}
-
-.contact-detail span {
-  font-size: 16px;
-  font-weight: 600;
-  color: #333;
-}
-
-.contact-detail a {
-  color: #e76f51;
-  font-weight: 600;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.contact-detail a:hover {
-  color: #d84315;
-  text-decoration: underline;
-}
-
-.btn-whatsapp {
-  margin-top: 20px;
-  padding: 14px 24px;
-  border: none;
-  background-color: linear-gradient(135deg, #00ffd5, #00ffa2);
-  color: black;
-  font-size: 24px;
-  letter-spacing: 0.5px;
+  padding: 30px;
   border-radius: 10px;
-  cursor: pointer;
-  font-weight: 800;
-  box-shadow: 0 8px 20px rgba(0, 137, 123, 0.3);
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  text-transform: uppercase;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 
-.btn-whatsapp:hover {
-  background: linear-gradient(45deg, #00ffd5, #00e6a4);
-  color: #004d40;
-  transform: scale(1.05) translateY(-2px);
-  box-shadow: 0 12px 25px rgba(0, 137, 123, 0.4);
-}
-
-.btn-whatsapp i {
-  color:black;
-  transition: transform 0.3s ease;
-}
-
-.btn-whatsapp:hover i {
-  transform: rotate(10deg) scale(1.1);
-}
-
-
-.animate-in {
-  opacity: 0;
-  transform: translateY(40px);
-  animation: slideInUp 1s ease forwards;
-}
-
-@keyframes slideInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-/* Animate on scroll */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Animation Class */
-.animate {
-  opacity: 0;
-  animation: fadeInUp 1s ease forwards;
-}
-
-/* Delay for staggered appearance */
-.delay-1 { animation-delay: 0.3s; }
-.delay-2 { animation-delay: 0.6s; }
-
-/* Card hover zoom effect */
-.feedback-form:hover,
-.contact-info:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 25px rgba(0,0,0,0.12);
-  transition: 0.3s ease;
-}
-
-/* Headings - vibrant & modern */
 .feedback-form h2,
-.contact-info h2,
-.section-heading {
-  font-family: 'Poppins', sans-serif;
-  color: gray; /* Deep sky blue */
-  text-transform: uppercase;
-  letter-spacing: 1px;
+.contact-info h2 {
+  margin-bottom: 20px;
+  color: #007acc;
+  text-align: center;
 }
 
-/* Input & textarea text */
-.feedback-form input,
-.feedback-form textarea {
-  font-family: 'Open Sans', sans-serif;
-  color: #0d1b2a; /* Dark navy for better readability */
+.feedback-form form input,
+.feedback-form form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
 }
 
-/* Contact text */
+.feedback-form form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007acc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.feedback-form form button:hover {
+  background-color: #005f9e;
+}
+
 .contact-info p {
-  font-family: 'Open Sans', sans-serif;
-  color: #333333; /* Neutral dark gray */
+  font-size: 16px;
+  margin-bottom: 10px;
 }
 
-/* Contact icons - accent color */
-.contact-info p i {
-  color: #f57c00; /* Warm orange for icons */
-}
-
-/* Contact links - distinct techy look */
 .contact-info a {
-  font-family: 'Roboto Mono', monospace;
-  color: gray; /* Royal blue for links */
+  color: #007acc;
+  text-decoration: none;
 }
 
-/* Contact links hover */
-.contact-info a:hover {
-  color: black; /* Bright cyan on hover */
-  text-shadow:0 10px 25px rgba(255, 122, 80, 0.2);
+.whatsapp-btn {
+  display: inline-block;
+  margin-top: 20px;
+  background-color: #25d366;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-/* Feedback button text */
-.feedback-form button {
-  font-family: 'Poppins', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+.whatsapp-btn:hover {
+  background-color: #1da851;
 }
+
 
 
 

@@ -958,29 +958,14 @@ nav {
 }
 
 
-
-
-.feedback-form h2 {
+.section-heading {
   text-align: center;
-  font-size: 28px;
   color: #0284c7;
-  margin-bottom: 30px;
-  position: relative;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.feedback-form h2::after {
-  content: "";
-  position: absolute;
-  width: 80px;
-  height: 3px;
-  background: #fbbf24;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 2px;
+  margin-bottom: 20px;
+  font-size: 36px;
+  border-bottom: 2px solid #facc15;
+  display: inline-block;
+  padding-bottom: 6px;
 }
 
 .feedback-form input,
@@ -1098,17 +1083,16 @@ nav {
 
 .btn-whatsapp {
   margin-top: 20px;
-  padding: 14px 24px;
+  padding: 14px;
   border: none;
-  background-color: linear-gradient(135deg, #00ffd5, #00ffa2);
-  color: black;
-  font-size: 24px;
-  letter-spacing: 0.5px;
-  border-radius: 10px;
+  background-color: #25D366;
+  color: white;
+  font-size: 22px;
+  border-radius: 8px;
   cursor: pointer;
-  font-weight: 800;
-  box-shadow: 0 8px 20px rgba(0, 137, 123, 0.3);
-  transition: all 0.3s ease;
+  font-weight: bold;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1117,21 +1101,9 @@ nav {
 }
 
 .btn-whatsapp:hover {
-  background: linear-gradient(45deg, #00ffd5, #00e6a4);
-  color: #004d40;
-  transform: scale(1.05) translateY(-2px);
-  box-shadow: 0 12px 25px rgba(0, 137, 123, 0.4);
+  background-color: #1ebe5d;
+  transform: translateY(-2px);
 }
-
-.btn-whatsapp i {
-  color:black;
-  transition: transform 0.3s ease;
-}
-
-.btn-whatsapp:hover i {
-  transform: rotate(10deg) scale(1.1);
-}
-
 
 .animate-in {
   opacity: 0;
@@ -1182,7 +1154,7 @@ nav {
 .contact-info h2,
 .section-heading {
   font-family: 'Poppins', sans-serif;
-  color: gray; /* Deep sky blue */
+  color: #0077b6; /* Deep sky blue */
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -1208,13 +1180,13 @@ nav {
 /* Contact links - distinct techy look */
 .contact-info a {
   font-family: 'Roboto Mono', monospace;
-  color: gray; /* Royal blue for links */
+  color: #1565c0; /* Royal blue for links */
 }
 
 /* Contact links hover */
 .contact-info a:hover {
-  color: black; /* Bright cyan on hover */
-  text-shadow:0 10px 25px rgba(255, 122, 80, 0.2);
+  color: #00bcd4; /* Bright cyan on hover */
+  text-shadow: 0 0 6px rgba(0, 188, 212, 0.5);
 }
 
 /* Feedback button text */

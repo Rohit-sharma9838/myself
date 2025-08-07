@@ -1124,7 +1124,6 @@ nav {
 }
 
 .btn-whatsapp i {
-  color:black;
   transition: transform 0.3s ease;
 }
 
@@ -1182,7 +1181,7 @@ nav {
 .contact-info h2,
 .section-heading {
   font-family: 'Poppins', sans-serif;
-  color: gray; /* Deep sky blue */
+  color: #0077b6; /* Deep sky blue */
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -1208,13 +1207,13 @@ nav {
 /* Contact links - distinct techy look */
 .contact-info a {
   font-family: 'Roboto Mono', monospace;
-  color: gray; /* Royal blue for links */
+  color: #1565c0; /* Royal blue for links */
 }
 
 /* Contact links hover */
 .contact-info a:hover {
-  color: black; /* Bright cyan on hover */
-  text-shadow:0 10px 25px rgba(255, 122, 80, 0.2);
+  color: #00bcd4; /* Bright cyan on hover */
+  text-shadow: 0 0 6px rgba(0, 188, 212, 0.5);
 }
 
 /* Feedback button text */

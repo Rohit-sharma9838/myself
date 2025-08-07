@@ -1213,7 +1213,7 @@ nav {
 
 /* Contact links hover */
 .contact-info a:hover {
-  color: black; /* Bright cyan on hover */
+  color: #00bcd4; /* Bright cyan on hover */
   text-shadow:0 10px 25px rgba(255, 122, 80, 0.2);
 }
 

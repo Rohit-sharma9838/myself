@@ -899,7 +899,7 @@ nav {
 
 
 /* Contact Form */
-.contact-section {
+#contact-section {
   background: #d0f0f7; /* Soft pastel aqua like your skills section */
   padding: 60px 20px;
   font-family: 'Segoe UI', sans-serif;
@@ -928,7 +928,7 @@ nav {
 
 /* Feedback card hover gradient animation */
 .feedback-form:hover {
-  background: #facc15;
+  background: linear-gradient(-45deg, #b2ebf2, #81d4fa, #e0f7fa);
   background-size: 300% 300%;
   animation: gradientShift1 4s ease infinite;
   transform: scale(1.02);
@@ -958,29 +958,14 @@ nav {
 }
 
 
-
-
-.feedback-form h2 {
+.section-heading {
   text-align: center;
-  font-size: 28px;
   color: #0284c7;
-  margin-bottom: 30px;
-  position: relative;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.feedback-form h2::after {
-  content: "";
-  position: absolute;
-  width: 80px;
-  height: 3px;
-  background: #fbbf24;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 2px;
+  margin-bottom: 20px;
+  font-size: 24px;
+  border-bottom: 2px solid #facc15;
+  display: inline-block;
+  padding-bottom: 6px;
 }
 
 .feedback-form input,
@@ -1026,112 +1011,50 @@ nav {
   transform: scale(0.97);
 }
 
-
-.contact-info {
-  flex: 1 1 420px;
-  background: linear-gradient(to bottom right, #fff1e6, #ffe8d6);
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(255, 122, 80, 0.2);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  font-family: 'Poppins', sans-serif;
-}
-
-.contact-info h2 {
-  text-align: center;
-  font-size: 28px;
-  color: #e76f51;
-  margin-bottom: 30px;
-  position: relative;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-.contact-info h2::after {
-  content: "";
-  position: absolute;
-  width: 80px;
-  height: 3px;
-  background: #f4a261;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 2px;
-}
-
-.contact-detail {
+.contact-info p {
+  font-size: 16px;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
-  background: #fff;
-  padding: 12px 18px;
-  margin-bottom: 15px;
-  border-radius: 12px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  gap: 8px;
   transition: 0.3s ease;
 }
 
-.contact-detail i {
-  color: #e76f51;
-  font-size: 20px;
-  margin-right: 15px;
+.contact-info p:hover {
+  transform: translateX(5px);
+  color: #0288d1;
 }
 
-.contact-detail span {
-  font-size: 16px;
-  font-weight: 600;
-  color: #333;
-}
-
-.contact-detail a {
-  color: #e76f51;
-  font-weight: 600;
+.contact-info a {
   text-decoration: none;
-  transition: color 0.3s ease;
+  color: #0288d1;
+  font-weight: 500;
+  transition: 0.3s ease;
 }
 
-.contact-detail a:hover {
-  color: #d84315;
-  text-decoration: underline;
+.contact-info a:hover {
+  text-shadow: 0 0 5px #00bcd4;
+  color: #00bcd4;
 }
 
-.btn-whatsapp {
-  margin-top: 20px;
-  padding: 14px 24px;
-  border: none;
-  background-color: linear-gradient(135deg, #00ffd5, #00ffa2);
-  color: black;
-  font-size: 24px;
-  letter-spacing: 0.5px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: 800;
-  box-shadow: 0 8px 20px rgba(0, 137, 123, 0.3);
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  text-transform: uppercase;
+
+.whatsapp-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #25D366;
+  color: white;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: 0.4s ease;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
 }
 
-.btn-whatsapp:hover {
-  background: linear-gradient(45deg, #00ffd5, #00e6a4);
-  color: #004d40;
-  transform: scale(1.05) translateY(-2px);
-  box-shadow: 0 12px 25px rgba(0, 137, 123, 0.4);
+.whatsapp-btn:hover {
+  background-color: #20c95a;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(37, 211, 102, 0.6);
 }
-
-.btn-whatsapp i {
-  color:black;
-  transition: transform 0.3s ease;
-}
-
-.btn-whatsapp:hover i {
-  transform: rotate(10deg) scale(1.1);
-}
-
 
 .animate-in {
   opacity: 0;
@@ -1182,7 +1105,7 @@ nav {
 .contact-info h2,
 .section-heading {
   font-family: 'Poppins', sans-serif;
-  color: gray; /* Deep sky blue */
+  color: #0077b6; /* Deep sky blue */
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -1208,13 +1131,13 @@ nav {
 /* Contact links - distinct techy look */
 .contact-info a {
   font-family: 'Roboto Mono', monospace;
-  color: gray; /* Royal blue for links */
+  color: #1565c0; /* Royal blue for links */
 }
 
 /* Contact links hover */
 .contact-info a:hover {
-  color: black; /* Bright cyan on hover */
-  text-shadow:0 10px 25px rgba(255, 122, 80, 0.2);
+  color: #00bcd4; /* Bright cyan on hover */
+  text-shadow: 0 0 6px rgba(0, 188, 212, 0.5);
 }
 
 /* Feedback button text */

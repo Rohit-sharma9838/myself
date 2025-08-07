@@ -17,6 +17,13 @@ const text = "I am a motivated and quick-learning fresher with hands-on experien
       setTimeout(type, erasingSpeed);
     } 
 
+    if (index === text.length) {
+      isDeleting = true;
+      setTimeout(type, delay);
+    } else if (index === 0 && isDeleting) {
+      isDeleting = false;
+      setTimeout(type, typingSpeed);
+    }
   }
 
   type();
