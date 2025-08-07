@@ -221,14 +221,19 @@
     <!-- Feedback Form -->
     <div class="feedback-form">
       <h2 class="section-heading">Feedback</h2>
-
-   <form action="https://formspree.io/f/mdkdkzpr" method="POST">
+      <form action="https://formsubmit.co/rohitsh9383@gmail.com" method="POST">
   <input type="text" name="name" placeholder="Your Name" required />
   <input type="email" name="email" placeholder="Your Email" required />
   <textarea name="message" placeholder="Share your feedback..." required></textarea>
-  <button type="submit" class="btn-whatsapp">SEND FEEDBACK</button>
-</form>
 
+  <!-- Optional fields -->
+  <input type="hidden" name="_captcha" value="false" />
+  <input type="hidden" name="_subject" value="New Feedback from Portfolio!" />
+
+  <button type="submit" class="btn-whatsapp">SEND FEEDBACK</button>
+  <input type="hidden" name="_next" value="https://rohitrs9838@gmail.com/thankyou.html" />
+
+</form>
 
     </div>
 
