@@ -403,6 +403,21 @@ nav {
 
 
 /* Skills */
+marquee {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+@media (max-width: 768px) {
+  marquee {
+    font-size: 0.9rem; /* optional: resize for smaller screens */
+  }
+}
+
 
 #skills {
   background: linear-gradient(-45deg, #ffe0e0, #e0fff4, #e0eaff, #fff0e0, #cce5ff); /* 💡 new color added */
