@@ -290,11 +290,9 @@ nav {
   margin-bottom: 20px;
   text-shadow: 0 0 5px #00f2fe, 0 0 10px #4facfe;
   animation: glowSkills 2s ease-in-out infinite alternate;
+  
 }
 
-#about h2{
-  text-decoration: underline;
-}
 /* Skill Section Background Animation */
 #skills {
   background: linear-gradient(270deg, #74ebd5, #9face6);

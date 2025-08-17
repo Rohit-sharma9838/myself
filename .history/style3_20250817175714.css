@@ -84,72 +84,37 @@ header {
 
 
 /* Navbar links */
-nav {
-  display: flex;
-  gap: 25px;
-}
-
-.nav-btn{
+/* === Stylish Nav Hover === */
+nav a.nav-btn {
   position: relative;
-  padding: 5px 12px;
-  font-size: 18px;
   font-weight: 600;
-  color: black;
+  font-size: 18px;
   text-decoration: none;
-  font-family: 'Poppins', sans-serif;
-  transition: color 0.3s ease, transform 0.3s ease;
-  text-transform: uppercase;
-
+  color: #000;
+  margin: 0 15px;
+  transition: all 0.3s ease-in-out;
 }
 
-.nav-btn::after {
-  content: "";
+nav a.nav-btn::after {
+  content: '';
   position: absolute;
   left: 0;
-  bottom: 0;
-  height: 2px;
-  width: 0%;
-  background: linear-gradient(to right, #00f260, #0575e6);
- transition: color 0.3s ease; /* Smooth color change on hover */
+  bottom: -5px;
+  height: 3px;
+  width: 0;
+  background: #00bfff;
+  transition: width 0.4s ease;
+  border-radius: 2px;
 }
 
-.nav-btn:hover::after {
+nav a.nav-btn:hover::after {
   width: 100%;
 }
 
-.nav-btn:hover {
-  color: #ffcc00;
-  transform: translateY(-2px);
-}
-
-/* Hamburger menu */
-.menu-toggle {
-  display: none;
-  font-size: 30px;
-  cursor: pointer;
-}
-
-/* Mobile styles */
-@media (max-width: 768px) {
-  nav {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background: #00ffc3;
-    flex-direction: column;
-    width: 100%;
-    display: none;
-    text-align: center;
-    padding: 10px 0;
-  }
-
-  nav.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
+nav a.nav-btn:hover {
+  color: #00bfff;
+  transform: scale(1.1);
+  text-shadow: 0 0 10px #00ffff;
 }
 
 
@@ -290,11 +255,9 @@ nav {
   margin-bottom: 20px;
   text-shadow: 0 0 5px #00f2fe, 0 0 10px #4facfe;
   animation: glowSkills 2s ease-in-out infinite alternate;
+  
 }
 
-#about h2{
-  text-decoration: underline;
-}
 /* Skill Section Background Animation */
 #skills {
   background: linear-gradient(270deg, #74ebd5, #9face6);
